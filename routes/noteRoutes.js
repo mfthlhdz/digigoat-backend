@@ -3,7 +3,7 @@ const router = express.Router();
 const authenticateToken = require("../middleware/authMiddleware");
 const noteController = require("../controllers/noteController");
 
-// Endpoint untuk mendapatkan catatan pengguna
+// Endpoint untuk mendapatkan catatan pengguna beserta persentase sehat dan sakit
 router.get("/", authenticateToken, noteController.getNotes);
 
 // Endpoint untuk menambahkan catatan baru

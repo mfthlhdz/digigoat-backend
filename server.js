@@ -7,6 +7,8 @@ const dotenv = require('dotenv');
 const authRoutes = require('./routes/authRoutes'); // Rute untuk autentikasi
 const noteRoutes = require('./routes/noteRoutes'); // Rute untuk catatan kambing
 const scheduleRoutes = require('./routes/scheduleRoutes');
+const importRoutes = require('./routes/importRoutes');
+const exportRoutes = require('./routes/exportRoutes');
 
 dotenv.config(); // Memuat variabel lingkungan dari .env
 
@@ -32,6 +34,8 @@ mongoose
 app.use('/api/auth', authRoutes); // Prefix rute autentikasi
 app.use('/api/notes', noteRoutes); // Prefix rute untuk catatan kambing
 app.use('/api/schedules', scheduleRoutes);
+app.use('/api/import', importRoutes);
+app.use('/api/export', exportRoutes);
 
 // Error handling middleware
 app.use((err, req, res, next) => {
