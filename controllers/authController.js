@@ -1,4 +1,3 @@
-// src/controllers/authController.js
 const User = require('../models/User');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
@@ -56,7 +55,7 @@ const loginUser = async (req, res) => {
     }
 
     // Buat JWT token
-    const token = jwt.sign({ userId: user._id }, process.env.JWT_SECRET, { expiresIn: '1h' });
+    const token = jwt.sign({ userId: user._id }, process.env.JWT_SECRET, { expiresIn: '1d' });
 
     res.status(200).json({
       message: 'Login berhasil',
